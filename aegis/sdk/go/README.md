@@ -22,6 +22,12 @@ if !result.Valid() {
 }
 ```
 
+Validate any shared fixture:
+
+```go
+result, err := aegis.ValidateFixture("../../examples/packets/identity-hello.packet.json")
+```
+
 ## Development
 
 ```bash

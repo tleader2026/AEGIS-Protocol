@@ -1,4 +1,5 @@
 from .errors import ErrorCode, ValidationOutcome
+from .conformance import validate_fixture
 from .manifest import load_manifest, validate_manifest
 from .packet import load_packet, validate_packet
 from .validation import ValidationFailure, ValidationResult
@@ -10,6 +11,7 @@ __all__ = [
     "ValidationResult",
     "load_manifest",
     "load_packet",
+    "validate_fixture",
     "validate_manifest",
     "validate_packet",
 ]

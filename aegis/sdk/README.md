@@ -21,5 +21,6 @@ Every SDK SHOULD expose:
 - `ValidationResult`
 - deterministic validation outcome values: `valid`, `invalid`, `quarantined`, `indeterminate`
 - deterministic error codes such as `AEGIS_E_PARSE`, `AEGIS_E_DIGEST_MISMATCH`, and `AEGIS_E_SIGNATURE_INVALID`
+- `validate_fixture` or equivalent conformance helper
 
 Cryptographic verification, registry resolution, and attestation verification MAY be adapter-backed until the relevant RFCs stabilize.

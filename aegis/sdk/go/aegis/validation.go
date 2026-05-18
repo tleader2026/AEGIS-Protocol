@@ -1,5 +1,7 @@
 package aegis
 
+import "encoding/json"
+
 type ValidationFailure struct {
 	Code    ErrorCode `json:"code"`
 	Path    string    `json:"path"`
@@ -14,6 +16,10 @@ type ValidationResult struct {
 
 func (r ValidationResult) Valid() bool {
 	return r.Outcome == OutcomeValid
+}
+
+func (r ValidationResult) JSON() ([]byte, error) {
+	return json.Marshal(r)
 }
 
 func validResult(metadata map[string]string) ValidationResult {

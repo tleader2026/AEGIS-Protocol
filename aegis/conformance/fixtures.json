@@ -1,0 +1,33 @@
+{
+  "aegisVersion": "1.0-draft",
+  "suite": "aegis-core-fixtures",
+  "description": "Baseline fixtures every AEGIS metadata library should parse and validate structurally.",
+  "expectedOutcome": "valid",
+  "fixtures": [
+    {
+      "kind": "manifest",
+      "path": "../examples/supervised-remediation.manifest.json",
+      "id": "aegis:manifest:01JZK7QYB4R3"
+    },
+    {
+      "kind": "packet",
+      "path": "../examples/packets/identity-hello.packet.json",
+      "packetType": "aegis.identity.hello.v1"
+    },
+    {
+      "kind": "packet",
+      "path": "../examples/packets/intent-present.packet.json",
+      "packetType": "aegis.intent.present.v1"
+    },
+    {
+      "kind": "packet",
+      "path": "../examples/packets/execution-checkpoint.packet.json",
+      "packetType": "aegis.execution.checkpoint.v1"
+    },
+    {
+      "kind": "packet",
+      "path": "../examples/packets/registry-reconcile.packet.json",
+      "packetType": "aegis.registry.reconcile.v1"
+    }
+  ]
+}

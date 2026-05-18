@@ -19,6 +19,7 @@ The primary artifact is not a website. The primary artifact is a deployable, lan
     /typescript
     /python
     /go
+  /conformance
   /examples
   /reference-implementations
   /registry
@@ -31,6 +32,7 @@ The primary artifact is not a website. The primary artifact is a deployable, lan
 - `/aegis/rfcs` contains the RFC process and proposal templates.
 - `/aegis/schemas` contains canonical protocol object schemas and examples.
 - `/aegis/sdk` contains deployable language libraries for creating and validating AEGIS metadata.
+- `/aegis/conformance` contains shared fixture metadata and compliance expectations.
 - `/aegis/examples` contains packet, manifest, and provenance examples.
 - `/aegis/reference-implementations` contains reference component plans and conformance notes.
 - `/aegis/registry` contains trust registry, federation, and reconciliation models.
@@ -50,6 +52,12 @@ Go:
 ```bash
 cd aegis/sdk/go
 go test ./...
+```
+
+Conformance fixtures:
+
+```text
+aegis/conformance/fixtures.json
 ```
 
 ## Credibility Anchors

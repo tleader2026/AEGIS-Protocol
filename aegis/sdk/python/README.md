@@ -12,13 +12,19 @@ Package name: `aegis-protocol`
 ## Sketch
 
 ```python
-from aegis import load_manifest, validate_manifest
+from aegis import load_manifest, validate_fixture, validate_manifest
 
 manifest = load_manifest("supervised-remediation.manifest.json")
 result = validate_manifest(manifest)
 
 if not result.valid:
     raise RuntimeError(result.failures)
+```
+
+Validate any shared fixture:
+
+```python
+result = validate_fixture("../../examples/packets/identity-hello.packet.json")
 ```
 
 ## Development
