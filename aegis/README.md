@@ -35,3 +35,12 @@ The goal is a protocol-oriented ecosystem: specifications, schemas, SDKs, regist
 ## Design Posture
 
 AEGIS composes with C2PA, OAuth, TLS, MCP, OpenTelemetry, Kubernetes, SBOM ecosystems, DID methods, COSE, and transparency logs. It does not require a single global authority or chain-specific trust model.
+
+## Credibility Anchors
+
+- Strong schemas live in `/aegis/schemas`.
+- Clear packet examples live in `/aegis/examples/packets`.
+- Protocol diagrams live in `/aegis/docs/diagrams.md`.
+- Deterministic terminology lives in `/aegis/docs/terminology.md`.
+- RFC formatting lives in `/aegis/rfcs/0000-template.md`.
+- Governance and conformance levels live in `/aegis/docs/governance.md`.

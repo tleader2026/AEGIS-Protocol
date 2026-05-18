@@ -1,0 +1,26 @@
+{
+  "aegisVersion": "1.0-draft",
+  "packetType": "aegis.execution.checkpoint.v1",
+  "packetId": "aegis:packet:01JZK95G8A",
+  "issuer": "aegis:runtime:aks-confidential-88",
+  "audience": "aegis://enterprise.example/provenance/ingest",
+  "issuedAt": "2026-05-18T08:46:00Z",
+  "nonce": "b64u-rQx1mGcV9n22",
+  "registry": "aegis.registry://enterprise.example/root",
+  "bodyDigest": "sha256:82bdf20a191c7a91c0ffee1111cfe31baa10bb0865a31b4a9d9ec0b44e",
+  "body": {
+    "envelopeId": "aegis:exec:run-19f4",
+    "checkpoint": {
+      "n": 2,
+      "kind": "human.approval",
+      "digest": "sha256:52ad82bdf20a191c7a91c0ffee1111cfe31baa10bb0865a31b4a9d9ec0b44e",
+      "token": "aegis:approval:9120"
+    },
+    "previousStepDigest": "sha256:4a9d9ec0b44e52ad82bdf20a191c7a91c0ffee1111cfe31baa10bb08"
+  },
+  "signature": {
+    "alg": "EdDSA",
+    "kid": "aegis:runtime:aks-confidential-88#quote-key",
+    "value": "b64u-example-runtime-signature"
+  }
+}

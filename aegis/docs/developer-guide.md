@@ -19,6 +19,23 @@ AEGIS implementers usually build one of five roles:
 7. Validate `ImpactReceipt` and human approval requirements.
 8. Check revocation and registry inclusion evidence.
 
+## Deterministic Error Codes
+
+Validators SHOULD expose stable error codes:
+
+- `AEGIS_E_PARSE`
+- `AEGIS_E_CANONICALIZATION`
+- `AEGIS_E_DIGEST_MISMATCH`
+- `AEGIS_E_SIGNATURE_INVALID`
+- `AEGIS_E_IDENTITY_UNRESOLVED`
+- `AEGIS_E_INTENT_SCOPE_DENIED`
+- `AEGIS_E_RUNTIME_ATTESTATION_STALE`
+- `AEGIS_E_PROVENANCE_GAP`
+- `AEGIS_E_IMPACT_UNREVIEWED`
+- `AEGIS_E_REGISTRY_UNAVAILABLE`
+
+Error messages MAY be localized, but error codes MUST remain stable.
+
 ## CLI Sketch
 
 ```bash

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/semantic-lineage-map.schema.json",
+  "title": "SemanticLineageMap",
+  "type": "object",
+  "required": ["mapId", "claims", "edges"],
+  "properties": {
+    "mapId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "digest", "label"],
+        "properties": {
+          "id": { "type": "string" },
+          "digest": { "$ref": "./defs.schema.json#/$defs/digest" },
+          "label": { "type": "string" },
+          "disclosure": { "enum": ["public", "selective", "redacted"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "kind"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "kind": { "enum": ["derived", "summarized", "translated", "transformed", "contradicted", "verified"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "redactions": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": false
+}

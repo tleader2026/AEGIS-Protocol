@@ -5,13 +5,14 @@
   "type": "object",
   "required": ["assertionId", "issuer", "subject", "claim", "evidence", "validUntil"],
   "properties": {
-    "assertionId": { "type": "string", "pattern": "^aegis:trust:" },
+    "assertionId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
     "issuer": { "type": "string" },
     "subject": { "type": "string" },
     "claim": { "type": "string" },
-    "evidence": { "type": "array", "items": { "type": "string" } },
+    "evidence": { "type": "array", "minItems": 1, "items": { "type": "string" } },
     "jurisdiction": { "type": "string" },
-    "validUntil": { "type": "string", "format": "date-time" }
+    "validUntil": { "type": "string", "format": "date-time" },
+    "signature": { "$ref": "./defs.schema.json#/$defs/coseOrDetachedSignature" }
   },
   "additionalProperties": false
 }

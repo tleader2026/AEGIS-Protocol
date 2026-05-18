@@ -2,6 +2,8 @@
 
 AEGIS defines a layered execution-trust protocol for AI-native systems.
 
+Normative terminology is defined in [terminology.md](./terminology.md). Diagrams are collected in [diagrams.md](./diagrams.md).
+
 ## Layer 1: Identity
 
 Verifiable agent identity, hardware-bound signatures, human approval chains, execution credentials, and device attestation.
@@ -55,3 +57,27 @@ Canonical objects:
 - Signatures use COSE envelopes, Ed25519, P-256, or future registered algorithms.
 - Registries provide transparency, revocation, reconciliation, and witness evidence.
 - Private reasoning text is not required for validation; reasoning digests and policy-bound checkpoints can be validated without disclosure.
+
+## Packet Classes
+
+AEGIS defines six initial packet classes:
+
+- `aegis.identity.hello.v1`
+- `aegis.intent.present.v1`
+- `aegis.execution.checkpoint.v1`
+- `aegis.provenance.publish.v1`
+- `aegis.impact.receipt.v1`
+- `aegis.registry.reconcile.v1`
+
+Packet validation is transport-neutral. A verifier MUST validate canonical body digest, packet signature, issuer authority, expiry, nonce freshness, registry status, and packet-type-specific requirements before trusting the payload.
+
+## Validation Outcomes
+
+Implementations SHOULD return one of these deterministic outcomes:
+
+- `valid`: all required checks passed.
+- `invalid`: packet or manifest is malformed, expired, incorrectly signed, or cryptographically inconsistent.
+- `quarantined`: evidence is structurally valid but policy, registry, trust authority, revocation, or impact constraints require isolation.
+- `indeterminate`: validation depends on unavailable registry, time, witness, or selective-disclosure evidence.
+
+Implementations MUST NOT silently coerce `quarantined` or `indeterminate` into `valid`.

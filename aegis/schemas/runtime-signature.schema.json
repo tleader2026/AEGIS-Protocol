@@ -5,12 +5,12 @@
   "type": "object",
   "required": ["runtimeId", "envelopeDigest", "imageDigest", "policyDigest", "attestation", "signature"],
   "properties": {
-    "runtimeId": { "type": "string", "pattern": "^aegis:runtime:" },
-    "envelopeDigest": { "type": "string" },
-    "imageDigest": { "type": "string" },
-    "policyDigest": { "type": "string" },
+    "runtimeId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
+    "envelopeDigest": { "$ref": "./defs.schema.json#/$defs/digest" },
+    "imageDigest": { "$ref": "./defs.schema.json#/$defs/digest" },
+    "policyDigest": { "$ref": "./defs.schema.json#/$defs/digest" },
     "attestation": { "type": "string" },
-    "signature": { "type": "string" }
+    "signature": { "$ref": "./defs.schema.json#/$defs/coseOrDetachedSignature" }
   },
   "additionalProperties": false
 }

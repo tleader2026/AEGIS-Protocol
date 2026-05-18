@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/human-approval-token.schema.json",
+  "title": "HumanApprovalToken",
+  "type": "object",
+  "required": ["approvalId", "approver", "intentId", "permittedImpact", "contextDigest", "decision", "signature"],
+  "properties": {
+    "approvalId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
+    "approver": { "type": "string" },
+    "intentId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
+    "permittedImpact": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "contextDigest": { "$ref": "./defs.schema.json#/$defs/digest" },
+    "decision": { "enum": ["approve", "deny", "escalate"] },
+    "challenge": { "type": "string", "minLength": 12 },
+    "signature": { "$ref": "./defs.schema.json#/$defs/coseOrDetachedSignature" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/packet.schema.json",
+  "title": "AegisPacket",
+  "type": "object",
+  "required": [
+    "aegisVersion",
+    "packetType",
+    "packetId",
+    "issuer",
+    "audience",
+    "issuedAt",
+    "bodyDigest",
+    "body",
+    "signature"
+  ],
+  "properties": {
+    "aegisVersion": { "$ref": "./defs.schema.json#/$defs/aegisVersion" },
+    "packetType": {
+      "enum": [
+        "aegis.identity.hello.v1",
+        "aegis.intent.present.v1",
+        "aegis.execution.checkpoint.v1",
+        "aegis.provenance.publish.v1",
+        "aegis.impact.receipt.v1",
+        "aegis.registry.reconcile.v1"
+      ]
+    },
+    "packetId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
+    "issuer": { "type": "string" },
+    "audience": { "type": "string" },
+    "issuedAt": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "nonce": { "type": "string", "minLength": 12 },
+    "registry": { "$ref": "./defs.schema.json#/$defs/registryRef" },
+    "bodyDigest": { "$ref": "./defs.schema.json#/$defs/digest" },
+    "body": { "type": "object" },
+    "signature": { "$ref": "./defs.schema.json#/$defs/coseOrDetachedSignature" }
+  },
+  "additionalProperties": false
+}

@@ -5,14 +5,15 @@
   "type": "object",
   "required": ["intentId", "issuer", "subject", "goal", "scopes", "autonomy", "expiresAt"],
   "properties": {
-    "intentId": { "type": "string", "pattern": "^aegis:intent:" },
-    "issuer": { "type": "string" },
-    "subject": { "type": "string" },
-    "goal": { "type": "string" },
-    "scopes": { "type": "array", "items": { "type": "string" } },
+    "intentId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
+    "issuer": { "type": "string", "minLength": 3 },
+    "subject": { "type": "string", "minLength": 3 },
+    "goal": { "type": "string", "minLength": 8, "maxLength": 2048 },
+    "scopes": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.*:-]*$" } },
     "constraints": { "type": "array", "items": { "type": "object" } },
     "autonomy": { "enum": ["human-directed", "supervised", "autonomous"] },
-    "expiresAt": { "type": "string", "format": "date-time" }
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "signature": { "$ref": "./defs.schema.json#/$defs/coseOrDetachedSignature" }
   },
   "additionalProperties": false
 }

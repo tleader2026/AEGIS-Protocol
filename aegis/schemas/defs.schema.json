@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/defs.schema.json",
+  "title": "AEGIS Common Definitions",
+  "$defs": {
+    "aegisVersion": {
+      "type": "string",
+      "enum": ["1.0-draft"]
+    },
+    "aegisUri": {
+      "type": "string",
+      "pattern": "^aegis:(manifest|intent|exec|prov|impact|trust|runtime|approval|semantic|packet):[A-Za-z0-9._:-]+$"
+    },
+    "aegisNamespace": {
+      "type": "string",
+      "pattern": "^aegis://[A-Za-z0-9.-]+/[A-Za-z0-9._/-]+$"
+    },
+    "did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9._:%-]+$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^(sha256|sha512-256):[A-Fa-f0-9]{16,128}$"
+    },
+    "coseOrDetachedSignature": {
+      "type": "object",
+      "required": ["alg", "kid", "value"],
+      "properties": {
+        "alg": { "enum": ["EdDSA", "ES256", "PS256"] },
+        "kid": { "type": "string", "minLength": 3 },
+        "value": { "type": "string", "minLength": 8 },
+        "protected": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "timeRange": {
+      "type": "object",
+      "required": ["notBefore", "notAfter"],
+      "properties": {
+        "notBefore": { "type": "string", "format": "date-time" },
+        "notAfter": { "type": "string", "format": "date-time" },
+        "maxClockSkewMs": { "type": "integer", "minimum": 0, "maximum": 300000 }
+      },
+      "additionalProperties": false
+    },
+    "registryRef": {
+      "type": "string",
+      "pattern": "^aegis\\.registry://[A-Za-z0-9.-]+/[A-Za-z0-9._/-]+$"
+    }
+  }
+}

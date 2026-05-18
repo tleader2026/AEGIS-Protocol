@@ -14,8 +14,8 @@
     "signatures"
   ],
   "properties": {
-    "aegisVersion": { "const": "1.0-draft" },
-    "manifestId": { "type": "string", "pattern": "^aegis:manifest:" },
+    "aegisVersion": { "$ref": "./defs.schema.json#/$defs/aegisVersion" },
+    "manifestId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
     "subject": { "$ref": "./agent-identity.schema.json" },
     "intent": { "$ref": "./intent-certificate.schema.json" },
     "execution": { "$ref": "./execution-envelope.schema.json" },
@@ -30,6 +30,7 @@
     },
     "signatures": {
       "type": "array",
+      "minItems": 1,
       "items": { "$ref": "./runtime-signature.schema.json" }
     }
   },

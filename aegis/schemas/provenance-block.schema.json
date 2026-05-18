@@ -5,14 +5,14 @@
   "type": "object",
   "required": ["blockId", "parentIds", "eventType", "actor", "artifactDigest", "timestamp", "signature"],
   "properties": {
-    "blockId": { "type": "string", "pattern": "^aegis:prov:" },
-    "parentIds": { "type": "array", "items": { "type": "string" } },
+    "blockId": { "$ref": "./defs.schema.json#/$defs/aegisUri" },
+    "parentIds": { "type": "array", "items": { "$ref": "./defs.schema.json#/$defs/aegisUri" } },
     "eventType": { "type": "string" },
     "actor": { "type": "string" },
-    "artifactDigest": { "type": "string" },
+    "artifactDigest": { "$ref": "./defs.schema.json#/$defs/digest" },
     "semanticRefs": { "type": "array", "items": { "type": "string" } },
     "timestamp": { "type": "string", "format": "date-time" },
-    "signature": { "type": "string" }
+    "signature": { "$ref": "./defs.schema.json#/$defs/coseOrDetachedSignature" }
   },
   "additionalProperties": false
 }

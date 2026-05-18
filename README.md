@@ -34,6 +34,15 @@ AEGIS is a draft open-source protocol specification and developer ecosystem for 
 - `/aegis/registry` contains trust registry, federation, and reconciliation models.
 - `/aegis/site` contains the Next.js public standards portal.
 
+## Credibility Anchors
+
+- Strong schemas: `/aegis/schemas`
+- Packet examples: `/aegis/examples/packets`
+- Diagrams: `/aegis/docs/diagrams.md`
+- RFC formatting: `/aegis/rfcs/0000-template.md`
+- Deterministic terminology: `/aegis/docs/terminology.md`
+- Governance: `/aegis/docs/governance.md`
+
 ## Site Development
 
 ```bash
