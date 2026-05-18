@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/trust-assertion.schema.json",
+  "title": "TrustAssertion",
+  "type": "object",
+  "required": ["assertionId", "issuer", "subject", "claim", "evidence", "validUntil"],
+  "properties": {
+    "assertionId": { "type": "string", "pattern": "^aegis:trust:" },
+    "issuer": { "type": "string" },
+    "subject": { "type": "string" },
+    "claim": { "type": "string" },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "jurisdiction": { "type": "string" },
+    "validUntil": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

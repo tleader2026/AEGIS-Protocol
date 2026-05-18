@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/runtime-signature.schema.json",
+  "title": "RuntimeSignature",
+  "type": "object",
+  "required": ["runtimeId", "envelopeDigest", "imageDigest", "policyDigest", "attestation", "signature"],
+  "properties": {
+    "runtimeId": { "type": "string", "pattern": "^aegis:runtime:" },
+    "envelopeDigest": { "type": "string" },
+    "imageDigest": { "type": "string" },
+    "policyDigest": { "type": "string" },
+    "attestation": { "type": "string" },
+    "signature": { "type": "string" }
+  },
+  "additionalProperties": false
+}

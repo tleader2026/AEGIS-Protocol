@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/agent-identity.schema.json",
+  "title": "AgentIdentity",
+  "type": "object",
+  "required": ["did", "namespace", "controller", "keyRefs"],
+  "properties": {
+    "did": { "type": "string", "pattern": "^did:" },
+    "namespace": { "type": "string", "pattern": "^aegis://" },
+    "controller": { "type": "string" },
+    "keyRefs": { "type": "array", "items": { "type": "string" } },
+    "attestationRefs": { "type": "array", "items": { "type": "string" } },
+    "delegation": { "type": "string" }
+  },
+  "additionalProperties": false
+}

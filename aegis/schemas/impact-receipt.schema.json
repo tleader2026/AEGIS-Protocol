@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/impact-receipt.schema.json",
+  "title": "ImpactReceipt",
+  "type": "object",
+  "required": ["receiptId", "actions", "systems", "risk", "review"],
+  "properties": {
+    "receiptId": { "type": "string", "pattern": "^aegis:impact:" },
+    "actions": { "type": "array", "items": { "type": "object" } },
+    "systems": { "type": "array", "items": { "type": "string" } },
+    "risk": {
+      "type": "object",
+      "required": ["score", "basis"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "basis": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "review": { "enum": ["none", "pending", "approved", "rejected"] },
+    "compliance": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

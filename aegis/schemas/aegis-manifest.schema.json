@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/aegis-manifest.schema.json",
+  "title": "AegisManifest",
+  "type": "object",
+  "required": [
+    "aegisVersion",
+    "manifestId",
+    "subject",
+    "intent",
+    "execution",
+    "provenance",
+    "impact",
+    "signatures"
+  ],
+  "properties": {
+    "aegisVersion": { "const": "1.0-draft" },
+    "manifestId": { "type": "string", "pattern": "^aegis:manifest:" },
+    "subject": { "$ref": "./agent-identity.schema.json" },
+    "intent": { "$ref": "./intent-certificate.schema.json" },
+    "execution": { "$ref": "./execution-envelope.schema.json" },
+    "provenance": {
+      "type": "array",
+      "items": { "$ref": "./provenance-block.schema.json" }
+    },
+    "impact": { "$ref": "./impact-receipt.schema.json" },
+    "trust": {
+      "type": "array",
+      "items": { "$ref": "./trust-assertion.schema.json" }
+    },
+    "signatures": {
+      "type": "array",
+      "items": { "$ref": "./runtime-signature.schema.json" }
+    }
+  },
+  "additionalProperties": false
+}

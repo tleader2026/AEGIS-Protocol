@@ -1,0 +1,65 @@
+{
+  "aegisVersion": "1.0-draft",
+  "manifestId": "aegis:manifest:01JZK7QYB4R3",
+  "subject": {
+    "did": "did:aegis:agent:sre.remediator",
+    "namespace": "aegis://enterprise.example/sre",
+    "controller": "did:web:enterprise.example",
+    "keyRefs": ["kid:signing-2026-q2"],
+    "attestationRefs": ["aegis:trust:fips-runtime-29"]
+  },
+  "intent": {
+    "intentId": "aegis:intent:ticket-8128",
+    "issuer": "did:web:enterprise.example",
+    "subject": "did:aegis:agent:sre.remediator",
+    "goal": "restore degraded checkout service",
+    "scopes": ["k8s.rollout.read", "k8s.rollout.restart"],
+    "constraints": [{ "type": "maxRisk", "value": 0.42 }],
+    "autonomy": "supervised",
+    "expiresAt": "2026-05-18T09:15:00Z"
+  },
+  "execution": {
+    "envelopeId": "aegis:exec:run-19f4",
+    "agent": "did:aegis:agent:sre.remediator",
+    "model": { "provider": "open-lab", "id": "frontier-r2", "version": "2026-05-01" },
+    "runtime": { "imageDigest": "sha256:7a91c0ffee11", "attestation": "cose:0oRDoQ" },
+    "steps": [
+      { "n": 1, "kind": "tool.call", "scope": "k8s.rollout.read", "digest": "sha256:52ad" },
+      { "n": 2, "kind": "human.approval", "token": "aegis:approval:9120" },
+      { "n": 3, "kind": "tool.call", "scope": "k8s.rollout.restart", "digest": "sha256:e31b" }
+    ],
+    "reasoningDigest": "sha256:private-redacted-digest",
+    "sealedAt": "2026-05-18T08:47:00Z"
+  },
+  "provenance": [
+    {
+      "blockId": "aegis:prov:block-44c2",
+      "parentIds": ["aegis:prov:block-44c1"],
+      "eventType": "action.execute",
+      "actor": "did:aegis:agent:sre.remediator",
+      "artifactDigest": "sha256:e31b",
+      "semanticRefs": ["aegis:semantic:claim:outage-remediation"],
+      "timestamp": "2026-05-18T08:47:00Z",
+      "signature": "ed25519:example"
+    }
+  ],
+  "impact": {
+    "receiptId": "aegis:impact:receipt-7731",
+    "actions": [{ "system": "kubernetes", "operation": "rollout.restart", "digest": "sha256:e31b" }],
+    "systems": ["prod-checkout-cluster"],
+    "risk": { "score": 0.31, "basis": ["bounded blast radius", "human approved"] },
+    "review": "approved",
+    "compliance": ["soc2.cc7.2"]
+  },
+  "trust": [],
+  "signatures": [
+    {
+      "runtimeId": "aegis:runtime:aks-confidential-88",
+      "envelopeDigest": "sha256:82bd",
+      "imageDigest": "sha256:7a91c0ffee11",
+      "policyDigest": "sha256:11cf",
+      "attestation": "cose:0oRDoQ",
+      "signature": "ed25519:example"
+    }
+  ]
+}

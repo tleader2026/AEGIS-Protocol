@@ -30,6 +30,7 @@ AEGIS is written as an infrastructure-grade open standard. Contributions should 
 ## Development
 
 ```bash
+cd aegis/site
 npm install
 npm run dev
 ```
@@ -37,8 +38,11 @@ npm run dev
 Before submitting a pull request:
 
 ```bash
+cd aegis/site
 npm run build
 ```
+
+Protocol, RFC, schema, SDK, registry, and reference implementation changes should be made in the corresponding `/aegis/*` directory rather than buried inside the website.
 
 ## Governance Expectations
 

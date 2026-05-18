@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/intent-certificate.schema.json",
+  "title": "IntentCertificate",
+  "type": "object",
+  "required": ["intentId", "issuer", "subject", "goal", "scopes", "autonomy", "expiresAt"],
+  "properties": {
+    "intentId": { "type": "string", "pattern": "^aegis:intent:" },
+    "issuer": { "type": "string" },
+    "subject": { "type": "string" },
+    "goal": { "type": "string" },
+    "scopes": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "array", "items": { "type": "object" } },
+    "autonomy": { "enum": ["human-directed", "supervised", "autonomous"] },
+    "expiresAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

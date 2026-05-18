@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aegis.dev/execution-envelope.schema.json",
+  "title": "ExecutionEnvelope",
+  "type": "object",
+  "required": ["envelopeId", "agent", "model", "runtime", "steps", "sealedAt"],
+  "properties": {
+    "envelopeId": { "type": "string", "pattern": "^aegis:exec:" },
+    "agent": { "type": "string" },
+    "model": {
+      "type": "object",
+      "required": ["provider", "id", "version"],
+      "properties": {
+        "provider": { "type": "string" },
+        "id": { "type": "string" },
+        "version": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["imageDigest", "attestation"],
+      "properties": {
+        "imageDigest": { "type": "string" },
+        "attestation": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "steps": { "type": "array", "items": { "type": "object" } },
+    "reasoningDigest": { "type": "string" },
+    "sealedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
