@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #071014;
+  color: #edf7f2;
+}
+
+::selection {
+  background: rgba(70, 240, 194, 0.28);
+}
+
+.aegis-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.light .aegis-grid {
+  background-image:
+    linear-gradient(rgba(7,16,20,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7,16,20,0.06) 1px, transparent 1px);
+}
+
+.code-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(134, 168, 255, 0.55) transparent;
+}
+
+.code-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.code-scroll::-webkit-scrollbar-thumb {
+  background: rgba(134, 168, 255, 0.55);
+  border-radius: 999px;
+}
+
+.noise:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.09;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
+}
