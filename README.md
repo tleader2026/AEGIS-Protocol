@@ -2,7 +2,9 @@
 
 Adaptive Execution & Governance Integrity Standard
 
-AEGIS is a draft open-source protocol specification and developer ecosystem for AI provenance, agent identity, signed intent, runtime attestation, semantic lineage, and accountable execution impact.
+AEGIS is a draft open-source metadata library and protocol specification for AI provenance, agent identity, signed intent, runtime attestation, semantic lineage, and accountable execution impact.
+
+The primary artifact is not a website. The primary artifact is a deployable, language-neutral metadata layer that agentic AI systems can embed to create, exchange, validate, and preserve execution provenance records.
 
 > The internet authenticated machines. AEGIS authenticates intelligence.
 
@@ -28,11 +30,27 @@ AEGIS is a draft open-source protocol specification and developer ecosystem for 
 - `/aegis/docs` contains protocol architecture, governance, and developer documentation.
 - `/aegis/rfcs` contains the RFC process and proposal templates.
 - `/aegis/schemas` contains canonical protocol object schemas and examples.
-- `/aegis/sdk` contains language SDK design notes and starter interfaces.
+- `/aegis/sdk` contains deployable language libraries for creating and validating AEGIS metadata.
 - `/aegis/examples` contains packet, manifest, and provenance examples.
 - `/aegis/reference-implementations` contains reference component plans and conformance notes.
 - `/aegis/registry` contains trust registry, federation, and reconciliation models.
-- `/aegis/site` contains the Next.js public standards portal.
+- `/aegis/site` contains an optional documentation and demo portal.
+
+## Library Development
+
+Python:
+
+```bash
+cd aegis/sdk/python
+python -m unittest
+```
+
+Go:
+
+```bash
+cd aegis/sdk/go
+go test ./...
+```
 
 ## Credibility Anchors
 
@@ -43,7 +61,7 @@ AEGIS is a draft open-source protocol specification and developer ecosystem for 
 - Deterministic terminology: `/aegis/docs/terminology.md`
 - Governance: `/aegis/docs/governance.md`
 
-## Site Development
+## Optional Site Development
 
 ```bash
 cd aegis/site

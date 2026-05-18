@@ -1,6 +1,6 @@
 # AEGIS Project Root
 
-This directory is the standards body root for AEGIS: Adaptive Execution & Governance Integrity Standard.
+This directory is the standards body and library root for AEGIS: Adaptive Execution & Governance Integrity Standard.
 
 AEGIS specifies how autonomous and semi-autonomous AI systems can prove:
 
@@ -13,7 +13,7 @@ AEGIS specifies how autonomous and semi-autonomous AI systems can prove:
 - whether the system exceeded permissions
 - whether provenance chains remain intact
 
-The goal is a protocol-oriented ecosystem: specifications, schemas, SDKs, registries, reference implementations, examples, and a public developer portal.
+The goal is a protocol-oriented metadata ecosystem: specifications, schemas, SDKs, registries, reference implementations, examples, and optional documentation surfaces. The SDKs are the center of gravity; the site is a companion.
 
 ## Topology
 

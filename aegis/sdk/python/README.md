@@ -1,6 +1,6 @@
 # AEGIS Python SDK
 
-Draft package name: `aegis-protocol`
+Package name: `aegis-protocol`
 
 ## Target Use Cases
 
@@ -12,11 +12,17 @@ Draft package name: `aegis-protocol`
 ## Sketch
 
 ```python
-from aegis import verify_manifest, RegistryClient
+from aegis import load_manifest, validate_manifest
 
-registry = RegistryClient("aegis.registry://gov.us/root")
-result = verify_manifest("supervised-remediation.manifest.json", registry=registry)
+manifest = load_manifest("supervised-remediation.manifest.json")
+result = validate_manifest(manifest)
 
 if not result.valid:
     raise RuntimeError(result.failures)
+```
+
+## Development
+
+```bash
+python -m unittest
 ```

@@ -1,6 +1,6 @@
 # AEGIS Go SDK
 
-Draft module: `github.com/aegis-protocol/aegis/sdk/go`
+Module: `github.com/aegis-protocol/aegis/sdk/go`
 
 ## Target Use Cases
 
@@ -12,13 +12,18 @@ Draft module: `github.com/aegis-protocol/aegis/sdk/go`
 ## Sketch
 
 ```go
-result, err := aegis.VerifyManifest(ctx, manifest, aegis.VerifyOptions{
-    Registry: "aegis.registry://cloud/root",
-})
+manifest, err := aegis.LoadManifest("supervised-remediation.manifest.json")
 if err != nil {
     return err
 }
-if !result.Valid {
+result := aegis.ValidateManifest(manifest)
+if !result.Valid() {
     return fmt.Errorf("invalid AEGIS manifest: %s", result.Failures[0].Message)
 }
+```
+
+## Development
+
+```bash
+go test ./...
 ```
