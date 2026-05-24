@@ -1,8 +1,68 @@
-# AEGIS Architecture
+﻿# AEGIS Architecture
 
-AEGIS defines a layered execution-trust protocol for AI-native systems.
+AEGIS defines a layered execution-trust protocol for AI-native systems. It is not a wrapper around agent transports. AEGIS is the Adaptive Execution & Governance Integrity Standard: the cross-transport execution integrity and provenance standard that accountable agent systems conform to.
 
 Normative terminology is defined in [terminology.md](./terminology.md). Diagrams are collected in [diagrams.md](./diagrams.md).
+
+```text
++-----------------------------------------------------+
+| NSGP                                                |
+| Natural Scale Governance Protocol                   |
+| Read-only observability analytics                   |
+| Queries ProvenanceEnvelopes; no coupling downward   |
++-----------------------------------------------------+
+| AEGIS Transport Implementations                     |
+| aegis-mcp / aegis-a2a / aegis-acp                   |
+| Thin interceptors; transports remain unmodified     |
++-----------------------------------------------------+
+| MCP / A2A / ACP                                     |
+| Transport protocols; untouched                      |
++-----------------------------------------------------+
+| AEGIS Protocol Layer                                |
+| JSON-RPC handshake                                  |
+| hello -> negotiate -> bindSession -> submitIntent   |
+| -> attestRuntime -> recordExecution                 |
+| -> resolveLineage -> closeSession                   |
++-----------------------------------------------------+
+| AEGIS Metadata Layer                                |
+| JSON Schemas; canonical object definitions          |
+| Python: aegis-metadata / aegis-protocol             |
+|         aegis-runtime / aegis-mcp / aegis-a2a       |
+| Objects: AgentIdentity, MachineAnchor,              |
+|          SessionBridge, IntentRecord,               |
+|          ExecutionClaim, RuntimeAttestation,        |
+|          LineageRecord, ProvenanceEnvelope          |
++-----------------------------------------------------+
+| AEGIS Runtime Daemon                                |
+| Local trust anchor (userspace MVP)                  |
+| Session lifecycle, signing, attestation hooks       |
+| Later: eBPF -> TPM2 -> secure enclave -> hardware   |
++-----------------------------------------------------+
+| C Core Primitive (aegis_core)                       |
+| Boring, durable, stable ABI                         |
+| aegis_record_hash() / aegis_record_validate()       |
+| aegis_signature_verify() / aegis_session_bind()     |
+| aegis_attestation_verify()                          |
++-----------------------------------------------------+
+| Kernel / Hardware Layer                             |
+| TPM2 attestation; machine identity anchor           |
+| Secure enclave; signing key protection              |
+| eBPF hooks (future); kernel-level observability     |
++-----------------------------------------------------+
+| Orbital Layer (future network trust root)           |
+| Satellite ASIC stamping at each routing hop         |
+| DTN / Bundle Protocol custody chain                 |
+| Stamps feed up into ProvenanceEnvelope              |
+| Physical tamper-resistance; above all ground law    |
++-----------------------------------------------------+
+```
+AEGIS does not know NSGP exists. NSGP is a downstream consumer of AEGIS records. The only downstream-driven design constraint is that `ProvenanceEnvelope` records must be queryable by session, machine, transport, time window, jurisdiction hints, and lineage chain.
+
+## Core Boundary
+
+MCP, A2A, and ACP define how agents communicate. AEGIS defines what accountable execution evidence those sessions must produce. NSGP later interprets that evidence at governance scale.
+
+The AEGIS transport implementations (`aegis-mcp`, `aegis-a2a`, and `aegis-acp`) are thin interceptors. They do not fork, replace, or redefine MCP, A2A, or ACP. They make those sessions AEGIS-conformant by emitting signed provenance records.
 
 ## Layer 1: Identity
 
@@ -81,3 +141,23 @@ Implementations SHOULD return one of these deterministic outcomes:
 - `indeterminate`: validation depends on unavailable registry, time, witness, or selective-disclosure evidence.
 
 Implementations MUST NOT silently coerce `quarantined` or `indeterminate` into `valid`.
+
+## Build Order
+
+1. `aegis-core`: schemas, canonical records, hashing, signatures, verification.
+2. `aegis-runtime`: JSON-RPC handshake, session binding, local record store.
+3. `aegis-mcp`: AEGIS MCP conformance implementation.
+4. `aegis-a2a`: AEGIS A2A conformance implementation.
+5. `aegis-acp`: AEGIS ACP conformance implementation.
+6. `aegis-cli`: inspect, verify, query, export.
+7. `nsgp`: later, read-only consumer of AEGIS records.
+
+## Record Flow
+
+```text
+Transport session
+  -> AEGIS runtime handshake
+  -> signed ProvenanceEnvelope
+  -> local or remote AEGIS record store
+  -> verifier / auditor / downstream governance analytics
+```

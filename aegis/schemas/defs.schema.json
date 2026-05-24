@@ -9,7 +9,7 @@
     },
     "aegisUri": {
       "type": "string",
-      "pattern": "^aegis:(manifest|intent|exec|prov|impact|trust|runtime|approval|semantic|packet):[A-Za-z0-9._:-]+$"
+      "pattern": "^aegis:(manifest|intent|exec|prov|impact|trust|runtime|approval|semantic|packet|session|machine|envelope):[A-Za-z0-9._:-]+$"
     },
     "aegisNamespace": {
       "type": "string",

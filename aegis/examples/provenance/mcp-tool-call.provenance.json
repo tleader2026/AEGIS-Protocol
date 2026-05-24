@@ -1,0 +1,61 @@
+{
+  "aegisVersion": "1.0-draft",
+  "envelopeId": "aegis:envelope:mcp-tool-call-001",
+  "transport": {
+    "kind": "mcp",
+    "protocolVersion": "2025-03-26",
+    "conformanceProfile": "AEGIS-MCP-1.0-draft",
+    "endpoint": "mcp://local/filesystem"
+  },
+  "session": {
+    "sessionId": "aegis:session:local-20260524-001",
+    "startedAt": "2026-05-24T05:15:00Z"
+  },
+  "machine": {
+    "machineId": "aegis:machine:dev-workstation-001",
+    "runtimeId": "aegis:runtime:python-sdk-001",
+    "attestationDigest": "sha256:0123456789abcdef0123456789abcdef",
+    "regionHint": "US"
+  },
+  "actor": {
+    "agentId": "aegis-agent:codex-reference",
+    "issuer": "did:web:aegis.dev",
+    "subject": "local-developer"
+  },
+  "intent": {
+    "intentId": "aegis:intent:add-framework-docs",
+    "summary": "Copy documentation outputs into the AEGIS repository and publish them.",
+    "intentDigest": "sha256:11111111111111111111111111111111"
+  },
+  "execution": {
+    "claims": [
+      {
+        "claimId": "aegis:exec:mcp-tool-call-001",
+        "claimType": "tool.call",
+        "occurredAt": "2026-05-24T05:16:00Z",
+        "target": "filesystem.copy",
+        "claimDigest": "sha256:22222222222222222222222222222222"
+      }
+    ]
+  },
+  "lineage": {
+    "parents": [],
+    "lineageDigest": "sha256:33333333333333333333333333333333"
+  },
+  "jurisdictionHints": [
+    {
+      "type": "geo_region",
+      "value": "US"
+    },
+    {
+      "type": "policy_domain",
+      "value": "software_provenance"
+    }
+  ],
+  "issuedAt": "2026-05-24T05:16:05Z",
+  "signature": {
+    "alg": "EdDSA",
+    "kid": "did:web:aegis.dev#reference-key-1",
+    "value": "base64url-placeholder-signature"
+  }
+}

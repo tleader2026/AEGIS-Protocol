@@ -7,7 +7,7 @@ from .errors import ErrorCode
 from .validation import ValidationFailure, failure
 
 AEGIS_VERSION = "1.0-draft"
-AEGIS_URI_RE = re.compile(r"^aegis:(manifest|intent|exec|prov|impact|trust|runtime|approval|semantic|packet):[A-Za-z0-9._:-]+$")
+AEGIS_URI_RE = re.compile(r"^aegis:(manifest|intent|exec|prov|impact|trust|runtime|approval|semantic|packet|session|machine|envelope):[A-Za-z0-9._:-]+$")
 DIGEST_RE = re.compile(r"^(sha256|sha512-256):[A-Fa-f0-9]{16,128}$")
 
 

@@ -59,6 +59,25 @@ The orbital layer is not speculative infrastructure. LEO satellite constellation
 
 ---
 
+## Protocol Conformance
+
+AEGIS is not a wrapper around MCP, A2A, or ACP. AEGIS is the execution and provenance standard those transport layers must uphold.
+
+The reference build includes thin transport implementations (`aegis-mcp`, `aegis-a2a`, and `aegis-acp`) that intercept sessions without modifying the underlying protocols.
+
+The operational build begins with:
+
+- [ProvenanceEnvelope](./aegis/schemas/provenance-envelope.schema.json): the signed record emitted by accountable sessions.
+- [AEGIS conformance](./aegis/conformance/README.md): the standard profiles for transport accountability.
+- [AEGIS-MCP-1.0-draft](./aegis/conformance/mcp.md): accountable MCP sessions, tool calls, resources, and prompts.
+- [AEGIS-A2A-1.0-draft](./aegis/conformance/a2a.md): accountable agent-to-agent messages, delegation, and handoff lineage.
+- [AEGIS-ACP-1.0-draft](./aegis/conformance/acp.md): accountable ACP session lifecycle and execution claims.
+- [JSON-RPC runtime handshake](./aegis/docs/json-rpc-handshake.md): the reference runtime interface for session binding, execution stamping, and envelope publication.
+
+NSGP is intentionally decoupled. It is a later read-only governance analytics layer that consumes AEGIS records.
+
+---
+
 ## Repository Structure
 
 ```

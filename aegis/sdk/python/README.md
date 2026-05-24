@@ -27,6 +27,18 @@ Validate any shared fixture:
 result = validate_fixture("../../examples/packets/identity-hello.packet.json")
 ```
 
+Validate a transport conformance record:
+
+```python
+from aegis import load_provenance_envelope, validate_provenance_envelope
+
+envelope = load_provenance_envelope("../../examples/provenance/mcp-tool-call.provenance.json")
+result = validate_provenance_envelope(envelope)
+
+if not result.valid:
+    raise RuntimeError(result.failures)
+```
+
 ## Development
 
 ```bash
