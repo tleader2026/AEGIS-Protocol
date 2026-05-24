@@ -96,6 +96,8 @@ NSGP is intentionally decoupled. It is a later read-only governance analytics la
   /reference-implementations
   /registry             Trust registry, federation, and reconciliation models
   /site                 Documentation and demo portal
+/specification          Formal protocol specification
+/adrs                   Architecture decision records
 ```
 
 ---

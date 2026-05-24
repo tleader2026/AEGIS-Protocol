@@ -35,6 +35,17 @@ jobs:
       - name: Run fixture tests
         run: go test ./...
 
+  c-core:
+    name: C Core
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: aegis/core/c
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run C core test
+        run: cc -std=c11 -Wall -Wextra -pedantic aegis_core.c test_aegis_core.c -o test_aegis_core && ./test_aegis_core
+
   site:
     name: Optional docs site
     runs-on: ubuntu-latest
