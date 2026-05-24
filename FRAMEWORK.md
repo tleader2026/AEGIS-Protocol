@@ -271,7 +271,7 @@ Current implementation status:
 
 Repository structure below reflects the intended architecture, not a completed implementation surface.
 
-### 4.5 Repository Structure
+### 4.5 Intended Repository Structure
 
 ```
 /aegis
