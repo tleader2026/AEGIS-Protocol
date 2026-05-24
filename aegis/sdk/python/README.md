@@ -111,3 +111,25 @@ The daemon collects a userspace `MachineAnchor` with platform evidence. Later re
 ```bash
 python -m unittest
 ```
+
+## Build
+
+```bash
+python -m pip install --upgrade build twine
+python -m build
+python -m twine check dist/*
+```
+
+## Publishing
+
+Publishing requires a PyPI API token configured outside the repository.
+
+```bash
+python -m twine upload dist/*
+```
+
+The package exposes a console script:
+
+```bash
+aegis-runtime --records .aegis/records.jsonl
+```

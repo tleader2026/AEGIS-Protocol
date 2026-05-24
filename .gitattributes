@@ -1,0 +1,6 @@
+# Keep the GitHub language bar focused on protocol implementations rather than the docs site.
+aegis/site/** linguist-vendored
+
+# Documentation and generated package metadata should not dominate language statistics.
+*.md linguist-documentation
+aegis/site/package-lock.json linguist-generated

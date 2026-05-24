@@ -10,6 +10,13 @@ func ValidateFixture(path string) (ValidationResult, error) {
 		}
 		return ValidatePacket(packet), nil
 	}
+	if strings.HasSuffix(path, ".provenance.json") {
+		envelope, err := LoadProvenanceEnvelope(path)
+		if err != nil {
+			return ValidationResult{}, err
+		}
+		return ValidateProvenanceEnvelope(envelope), nil
+	}
 	manifest, err := LoadManifest(path)
 	if err != nil {
 		return ValidationResult{}, err

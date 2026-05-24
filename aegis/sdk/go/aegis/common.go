@@ -9,7 +9,7 @@ import (
 const AegisVersion = "1.0-draft"
 
 var (
-	aegisURI = regexp.MustCompile(`^aegis:(manifest|intent|exec|prov|impact|trust|runtime|approval|semantic|packet):[A-Za-z0-9._:-]+$`)
+	aegisURI = regexp.MustCompile(`^aegis:(manifest|intent|exec|prov|impact|trust|runtime|approval|semantic|packet|session|machine|envelope):[A-Za-z0-9._:-]+$`)
 	digest   = regexp.MustCompile(`^(sha256|sha512-256):[A-Fa-f0-9]{16,128}$`)
 )
 

@@ -39,3 +39,26 @@ func TestPacketFixturesAreValid(t *testing.T) {
 		})
 	}
 }
+
+func TestProvenanceFixturesAreValid(t *testing.T) {
+	provenanceDir := filepath.Join("..", "..", "..", "examples", "provenance")
+	paths, err := filepath.Glob(filepath.Join(provenanceDir, "*.provenance.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(paths) == 0 {
+		t.Fatal("expected provenance fixtures")
+	}
+	for _, path := range paths {
+		t.Run(filepath.Base(path), func(t *testing.T) {
+			envelope, err := LoadProvenanceEnvelope(path)
+			if err != nil {
+				t.Fatal(err)
+			}
+			result := ValidateProvenanceEnvelope(envelope)
+			if !result.Valid() {
+				t.Fatalf("expected valid provenance envelope, got %+v", result.Failures)
+			}
+		})
+	}
+}
