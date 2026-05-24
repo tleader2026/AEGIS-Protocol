@@ -309,9 +309,11 @@ The **protocol** is the welding layer — the artifact that makes the agent sess
 
 ## Status
 
-AEGIS is a serious draft infrastructure standard, not a research paper or whitepaper. It is designed for deployment across AI labs, governments, cloud providers, autonomous agents, robotics platforms, media systems, enterprise AI, and distributed inference networks.
+AEGIS is a draft infrastructure standard. It is being designed for deployment across AI labs, governments, cloud providers, autonomous agents, robotics platforms, media systems, enterprise AI, and distributed inference networks.
 
-The geopolitical layer described in this document is a thesis about how the world is organizing, not a policy prescription. The technical layers described here are designed to be useful regardless of which geopolitical trajectory materializes — because accountable AI execution is necessary in any world where agents act consequentially on behalf of humans.
+The geopolitical layer described in this document is a thesis about how the world is organizing, not a policy prescription. 
+
+The technical layers described here are designed to be useful regardless of which geopolitical trajectory materializes — because accountable AI execution is necessary in any world where agents act consequentially on behalf of humans.
 
 The protocol is being built for the world as it is becoming, not the world as it was, or as it is in the year 2026.
 
