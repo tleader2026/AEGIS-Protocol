@@ -107,7 +107,7 @@ When this transition completes, the network topology inverts:
 
 The telco layer becomes unnecessary. The satellite constellation becomes the routing fabric. The ground station becomes the last-mile endpoint.
 
-In this topology, **the satellite is the router**. And a router that has an ASIC — an application-specific integrated circuit — dedicated to stamping can produce provenance records at the network layer, not the application layer. The stamp is not produced by the software running on the user's machine or the operator's server. It is produced by the physical infrastructure routing the packet. It cannot be forged by either party to the transaction.
+In this topology, **the satellite is the router**. And a router that has an ASIC (an application-specific integrated circuit) dedicated to stamping can produce provenance records at the network layer, not the application layer. The stamp is not produced by the software running on the user's machine or the operator's server. It is produced by the physical infrastructure routing the packet. It cannot be forged by either party to the transaction.
 
 Vint Cerf's work on Delay-Tolerant Networking (DTN) and the Interplanetary Internet is directly relevant here. TCP/IP assumes stable end-to-end connections. LEO constellations, and eventually deep-space networks, require a different model: store-and-forward, where each node takes custody of the data until the next link is available. The Bundle Protocol formalizes this custody chain. Every hop is a documented handoff.
 
@@ -177,15 +177,15 @@ The most counterintuitive element of the continental architecture is the role of
 
 Oceania — Australia and the Pacific — holds the master ledger for the entire continental system. Not because Oceania is the most powerful bloc. Because Oceania is the most vulnerable.
 
-The logic is as follows: any bloc that moves against Oceania loses access to the master ledger, which means losing the ability to validate any provenance record, any agent session stamp, or any cross-bloc transaction in the system. The cost of aggression is total systemic blindness. That is a stronger deterrent than a military alliance, because it is not contingent on political will — it is structural.
+The logic is as follows: any bloc that moves to overthrow or take control of Oceania loses access to the master ledger, because other blocks will consider it a threat to their own sovereignty (losing the ability to validate any provenance record, any agent session stamp, or any cross-bloc transaction in the system). The cost of aggression is total systemic blindness. That is a stronger deterrent than a military alliance, or nuclear trad, because it is not contingent on political will — it is structural.
 
-This is the same logic that makes Switzerland the host of international institutions: not Swiss strength, but Swiss absence of territorial ambition. Oceania has no expansionary agenda. Their interests are purely defensive. They are the credible neutral custodian precisely because no one fears what they would do with the leverage.
+This is the same logic that makes Switzerland the host of international institutions: not Swiss strength, but Swiss absence of territorial capability. Oceania has no expansionary options. Their interests are purely defensive. They are the credible neutral custodian precisely because no one fears what they would do with the leverage.
 
 This design pattern has already been proven at civilizational scale — not for AI, but for money. The Bank for International Settlements (BIS), headquartered in Basel, Switzerland, is the bank for central banks. It holds the settlement infrastructure for the global financial system. It was not chosen because Switzerland is powerful. It was chosen because Switzerland has no territorial ambitions, no imperial history, and no plausible motive to weaponize its custodial position. Its neutrality is structural, not merely declared. Since 1930, the BIS has operated through wars, depressions, and geopolitical upheavals as the one institution that every central bank trusted precisely because it had nothing to gain by betraying that trust.
 
-The Oceania master ledger follows the same logic, applied to AI provenance rather than financial settlement. It is worth acknowledging honestly: the BIS model is not without its failures. Over time, the institutions built around financial settlement infrastructure accumulated power that now extends well beyond neutral custody — banks, through the machinery the BIS coordinates, now exercise leverage over entire economies in ways that were not intended at the founding and that have produced real and serious harms. This framework takes that problem into account. The AEGIS design does not concentrate executive power in the ledger holder. Oceania holds the validation function — the cryptographic root that confirms provenance records are authentic. It does not hold the content of those records, the authority to interpret them, or the power to act on them. The deterrent value is structural: losing ledger access means losing the ability to validate any cross-bloc transaction. But the ledger holder cannot unilaterally weaponize the records themselves. The distinction between custodian and authority is deliberate, and it is the lesson the BIS history teaches.
+The Oceania master ledger follows the same logic, applied to AI provenance rather than financial settlement. It is worth acknowledging honestly: the BIS model is not without its failures. Over time, the institutions built around financial settlement infrastructure accumulated power that now extends well beyond neutral custody — banks, through machinery the BIS coordinates, now exercise leverage over entire economies in ways that were not intended at the founding and that have produced real and serious harms. This framework takes that problem into account. The AEGIS design does not concentrate executive power in the ledger holder. Oceania holds the validation function — the cryptographic root that confirms provenance records are authentic. It does not hold the content of those records, the authority to interpret them, or the power to act on them. The deterrent value is structural: losing ledger access means losing the ability to validate any cross-bloc transaction. But the ledger holder cannot unilaterally weaponize the records themselves. The distinction between custodian and authority is deliberate, and it is the lesson the BIS history teaches.
 
-The master ledger is to the continental system what the nuclear codes are to a deterrence architecture: not because the holder is the most powerful party, but because the cost of forcing their hand is unacceptable to everyone.
+The master ledger is to the continental system what the nuclear codes are to a deterrence architecture: the cost of forcing a hand is unacceptable to everyone.
 
 ### 3.4 The Ground Station Problem, Resolved
 
@@ -193,9 +193,9 @@ The orbital layer's vulnerability is the ground station control plane. Satellite
 
 The continental bloc structure resolves this. Ground stations do not need to be jurisdiction-neutral if the blocs are the jurisdiction. Instead of individual nations asserting control over ground stations — and therefore over the stamping authority — ground stations fall under continental bloc governance. The geopolitical attack surface on the trust root collapses from 200+ nation-states to a handful of blocs.
 
-Each bloc operates a segment of the satellite constellation under its own governance. The stamps produced by each segment are validated against the Oceania master ledger. No single bloc controls the full constellation. The trust root is distributed across the blocs and anchored in the one bloc with no territorial ambitions.
+Each bloc operates a segment of the satellite constellation under its own governance, just as the United States and Russia held joint-operation over the ISS (international space station). The stamps produced by each segment are validated against the Oceania master ledger. No single bloc controls the full constellation. The trust root is distributed across the blocs and anchored in the one bloc with no territorial ambitions.
 
-This is the connection between the technology layer and the geopolitical layer. The satellite ASIC stamp is not just an engineering decision. It is the physical implementation of the continental accountability architecture.
+This is the connection between the technology layer and the geopolitical layer. The satellite ASIC stamp is the physical implementation of the continental accountability architecture.
 
 ### 3.5 The Orbital Lattice and Bloc Formation
 
@@ -299,7 +299,7 @@ AEGIS is a serious draft infrastructure standard, not a research paper or whitep
 
 The geopolitical layer described in this document is a thesis about how the world is organizing, not a policy prescription. The technical layers described here are designed to be useful regardless of which geopolitical trajectory materializes — because accountable AI execution is necessary in any world where agents act consequentially on behalf of humans.
 
-The protocol is being built for the world as it is becoming, not the world as it was.
+The protocol is being built for the world as it is becoming, not the world as it was, or as it is in the year 2026.
 
 ---
 
