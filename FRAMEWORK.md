@@ -256,7 +256,22 @@ The AEGIS protocol is designed against the following principles:
 
 **RFC process.** Protocol changes follow a formal RFC process. Each RFC must define wire formats, validation behavior, failure modes, and security/privacy considerations. Implementation sketches or test vectors are required.
 
-### 4.4 Repository Structure
+### 4.4 Implementation Status
+
+This repository is an early public draft of the protocol and architecture.
+
+Current implementation status:
+
+- Python SDK: in progress
+- TypeScript SDK: planned / scaffolded
+- Go SDK: planned / scaffolded
+- C primitive: planned
+- Conformance fixtures: planned
+- Documentation site: planned
+
+Repository structure below reflects the intended architecture, not a completed implementation surface.
+
+### 4.5 Repository Structure
 
 ```
 /aegis
@@ -273,23 +288,6 @@ The AEGIS protocol is designed against the following principles:
   /registry       Trust registry, federation, and reconciliation models
   /site           Documentation and demo portal
 ```
-
-### 4.5 Implementation Status
-
-This repository is an early public draft of the protocol and architecture.
-
-Current implementation status:
-
-- Python SDK: in progress
-- TypeScript SDK: planned / scaffolded
-- Go SDK: planned / scaffolded
-- C primitive: planned
-- Conformance fixtures: planned
-- Documentation site: planned
-
-Repository structure below reflects the intended architecture, not a completed implementation surface.
-
----
 
 ## The Connection
 
