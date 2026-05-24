@@ -24,13 +24,12 @@ The post-Second World War institutional settlement — the United Nations, NATO,
 
 The error is not that the current system is corrupt or malicious. The error is architectural. When decision velocity accelerates while political legitimacy remains nationally bounded, the probability of miscalculation grows independent of intent. As in aviation or nuclear safety engineering, high-risk systems require governance structures commensurate with their destructive potential.
 
-**The thesis is this:** self-governance works when the unit of governance matches the unit of risk. At the scale of the family, the family governs. At the scale of the municipality, local institutions govern. At the scale of existential-category technology — AI, nuclear, space, autonomous systems — governance must operate at continental scale, not national scale.
+**The thesis is this:** self-governance works when the unit of governance matches the unit of risk. At the scale of the family, the family governs. At the scale of the municipality, local institutions govern. At the scale of existential-category technology — AI, nuclear, space, autonomous systems — governance must operate at continental scale, not national scale. See this link for mathmatics for each scale: https://github.com/tleader2026/NSGP-Natural-Scale-Governance-Protocol-/blob/main/README.md
 
-This is not a proposal for world government. It is the opposite. World government collapses the distinction between scales and produces a single point of failure. The continental model preserves national sovereignty for domestic matters, preserves international institutions for cross-bloc arbitration, and adds one new layer — the continental bloc — that handles only what nation-states cannot: survival-scale force and technological oversight.
+This is not a proposal for world government. It is the opposite. World government collapses the distinction between scales and produces a single point of failure. The continental model preserves national sovereignty for domestic matters, preserves international institutions for cross-bloc arbitration, and adds one new layer: "continental bloc", which handles only what nation-states cannot: survival-scale force and "super-technologies" oversight (Nuclear Weapons, Artificial General Intelligence, Artificial Superintelligence, Quantum Computing, etc).
 
 The insight that distinguishes this framework from prior federalist proposals is that the new layer does not need to be built. It naturally emerges when unpredictable crisis occurs, as all prior institutional layers have emerged. The Concert of Europe did not arise from consensus; it arose from the exhaustion of the Napoleonic Wars. The post-1945 order arose from the devastation of two world wars. The continental layer will arise from the mounting pressure of AI-compressed multipolarity. The question is not whether it emerges, but whether it coheres into something stable or fractures into something worse.
 
-This framework is an attempt to define the architecture before the crisis forces the geometry.
 
 ---
 
