@@ -274,7 +274,7 @@ The AEGIS protocol is designed against the following principles:
   /site           Documentation and demo portal
 ```
 
-## Implementation Status
+### 4.5 Implementation Status
 
 This repository is an early public draft of the protocol and architecture.
 
