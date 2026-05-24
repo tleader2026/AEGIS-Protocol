@@ -274,6 +274,21 @@ The AEGIS protocol is designed against the following principles:
   /site           Documentation and demo portal
 ```
 
+## Implementation Status
+
+This repository is an early public draft of the protocol and architecture.
+
+Current implementation status:
+
+- Python SDK: in progress
+- TypeScript SDK: planned / scaffolded
+- Go SDK: planned / scaffolded
+- C primitive: planned
+- Conformance fixtures: planned
+- Documentation site: planned
+
+Repository structure below reflects the intended architecture, not a completed implementation surface.
+
 ---
 
 ## The Connection
