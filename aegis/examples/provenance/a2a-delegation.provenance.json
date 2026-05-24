@@ -1,0 +1,70 @@
+{
+  "aegisVersion": "1.0-draft",
+  "envelopeId": "aegis:envelope:a2a-delegation-001",
+  "transport": {
+    "kind": "a2a",
+    "protocolVersion": "0.1-draft",
+    "conformanceProfile": "AEGIS-A2A-1.0-draft",
+    "endpoint": "a2a://agent/researcher"
+  },
+  "session": {
+    "sessionId": "aegis:session:a2a-20260524-001",
+    "startedAt": "2026-05-24T05:30:00Z"
+  },
+  "machine": {
+    "machineId": "aegis:machine:dev-workstation-001",
+    "runtimeId": "aegis:runtime:python-sdk-001",
+    "attestationDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "regionHint": "US"
+  },
+  "actor": {
+    "agentId": "aegis-agent:planner",
+    "issuer": "did:web:aegis.dev",
+    "subject": "local-developer"
+  },
+  "intent": {
+    "intentId": "aegis:intent:a2a-delegate-research",
+    "summary": "Delegate a bounded research task to a downstream agent.",
+    "intentDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "execution": {
+    "claims": [
+      {
+        "claimId": "aegis:exec:a2a-delegate-001",
+        "claimType": "agent.delegate",
+        "occurredAt": "2026-05-24T05:31:00Z",
+        "target": "aegis-agent:researcher",
+        "claimDigest": "sha256:cccccccccccccccccccccccccccccccc"
+      },
+      {
+        "claimId": "aegis:exec:a2a-message-001",
+        "claimType": "agent.message",
+        "occurredAt": "2026-05-24T05:31:30Z",
+        "target": "aegis-agent:researcher",
+        "claimDigest": "sha256:dddddddddddddddddddddddddddddddd"
+      }
+    ]
+  },
+  "lineage": {
+    "parents": [
+      "aegis:envelope:mcp-tool-call-001"
+    ],
+    "lineageDigest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+  },
+  "jurisdictionHints": [
+    {
+      "type": "geo_region",
+      "value": "US"
+    },
+    {
+      "type": "policy_domain",
+      "value": "agent_delegation"
+    }
+  ],
+  "issuedAt": "2026-05-24T05:31:35Z",
+  "signature": {
+    "alg": "EdDSA",
+    "kid": "did:web:aegis.dev#reference-key-1",
+    "value": "base64url-placeholder-signature"
+  }
+}

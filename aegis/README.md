@@ -19,6 +19,8 @@ The goal is a protocol-oriented metadata ecosystem: specifications, schemas, SDK
 
 ```text
 /aegis
+  /core
+    /c
   /docs
   /rfcs
   /schemas
@@ -40,6 +42,11 @@ AEGIS composes with C2PA, OAuth, TLS, MCP, OpenTelemetry, Kubernetes, SBOM ecosy
 
 - Strong schemas live in `/aegis/schemas`.
 - Clear packet examples live in `/aegis/examples/packets`.
+- Provenance examples live in `/aegis/examples/provenance`.
+- The userspace Python MVP lives in `/aegis/sdk/python`.
+- The stable C primitive lives in `/aegis/core/c`.
+- The kernel/hardware test plan lives in `/aegis/core/kernel`.
+- Runtime daemon launch examples live in `/aegis/reference-implementations/aegis-runtime`.
 - Protocol diagrams live in `/aegis/docs/diagrams.md`.
 - Deterministic terminology lives in `/aegis/docs/terminology.md`.
 - RFC formatting lives in `/aegis/rfcs/0000-template.md`.

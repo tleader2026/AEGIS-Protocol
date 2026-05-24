@@ -2,6 +2,10 @@
 
 Planned reference components:
 
+- `aegis-runtime`: userspace daemon for session lifecycle, signing, attestation hooks, and local record storage
+- `aegis-mcp`: AEGIS transport implementation for accountable MCP sessions
+- `aegis-a2a`: AEGIS transport implementation for accountable agent-to-agent sessions
+- `aegis-acp`: AEGIS transport implementation for accountable ACP sessions
 - `aegis-validator`: canonical manifest and packet validator
 - `aegis-registry`: transparency, witness, revocation, and reconciliation service
 - `aegis-k8s-admission`: Kubernetes admission controller for AI workloads

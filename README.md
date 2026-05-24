@@ -82,6 +82,8 @@ NSGP is intentionally decoupled. It is a later read-only governance analytics la
 
 ```
 /aegis
+  /core                C primitive and stable ABI
+    /kernel            Kernel and hardware test plan
   /docs                 Protocol architecture, governance, developer documentation
   /rfcs                 RFC process and proposal templates
   /schemas              Canonical protocol object schemas and examples

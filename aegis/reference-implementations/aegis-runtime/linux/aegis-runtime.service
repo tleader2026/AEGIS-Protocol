@@ -1,0 +1,14 @@
+[Unit]
+Description=AEGIS Runtime Daemon
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/aegis/aegis/sdk/python
+ExecStart=/usr/bin/python3 -m aegis.daemon --records /var/lib/aegis/records.jsonl
+Restart=on-failure
+User=aegis
+Group=aegis
+
+[Install]
+WantedBy=multi-user.target

@@ -64,6 +64,8 @@ MCP, A2A, and ACP define how agents communicate. AEGIS defines what accountable 
 
 The AEGIS transport implementations (`aegis-mcp`, `aegis-a2a`, and `aegis-acp`) are thin interceptors. They do not fork, replace, or redefine MCP, A2A, or ACP. They make those sessions AEGIS-conformant by emitting signed provenance records.
 
+The kernel/hardware layer starts as a userspace machine-anchor collector so the MVP is testable on Windows 11, macOS, Linux, and Raspberry Pi OS. eBPF, TPM2, secure enclave, and hardware roots are strengthening paths, not prerequisites for the first runnable implementation.
+
 ## Layer 1: Identity
 
 Verifiable agent identity, hardware-bound signatures, human approval chains, execution credentials, and device attestation.
@@ -146,11 +148,12 @@ Implementations MUST NOT silently coerce `quarantined` or `indeterminate` into `
 
 1. `aegis-core`: schemas, canonical records, hashing, signatures, verification.
 2. `aegis-runtime`: JSON-RPC handshake, session binding, local record store.
-3. `aegis-mcp`: AEGIS MCP conformance implementation.
-4. `aegis-a2a`: AEGIS A2A conformance implementation.
-5. `aegis-acp`: AEGIS ACP conformance implementation.
-6. `aegis-cli`: inspect, verify, query, export.
-7. `nsgp`: later, read-only consumer of AEGIS records.
+3. `aegis_core`: C primitive with stable ABI for hashing, validation, signature checks, session binding, and attestation verification.
+4. `aegis-mcp`: AEGIS MCP conformance implementation.
+5. `aegis-a2a`: AEGIS A2A conformance implementation.
+6. `aegis-acp`: AEGIS ACP conformance implementation.
+7. `aegis-cli`: inspect, verify, query, export.
+8. `nsgp`: later, read-only consumer of AEGIS records.
 
 ## Record Flow
 
