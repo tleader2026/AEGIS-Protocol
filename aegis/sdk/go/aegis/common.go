@@ -37,12 +37,15 @@ func requireString(document Document, key string, path string, failures *[]Valid
 }
 
 func requireObject(value any, path string, failures *[]ValidationFailure) (Document, bool) {
-	object, ok := value.(map[string]any)
-	if !ok {
+	switch object := value.(type) {
+	case Document:
+		return object, true
+	case map[string]any:
+		return Document(object), true
+	default:
 		*failures = append(*failures, failure(ErrType, path, "expected object"))
 		return nil, false
 	}
-	return Document(object), true
 }
 
 func requireArray(document Document, key string, path string, failures *[]ValidationFailure) []any {
@@ -69,6 +72,7 @@ func validateDigest(value string, path string, failures *[]ValidationFailure) {
 func validateSignature(value any, path string, failures *[]ValidationFailure) {
 	signature, ok := requireObject(value, path, failures)
 	if !ok {
+		(*failures)[len(*failures)-1] = failure(ErrSignatureInvalid, path, "signature object is required")
 		return
 	}
 	for _, key := range []string{"alg", "kid", "value"} {
