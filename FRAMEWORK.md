@@ -170,23 +170,7 @@ The authority separation is explicit:
 
 The blocs do not require voluntary adoption. They emerge from the default trajectories of human action under duress — from crises that make the alternatives more costly than alignment. This is the historical pattern: the Concert of Europe, the post-1945 order, and every prior institutional layer emerged not from consensus but from exhaustion and necessity.
 
-### 3.3 Oceania and the Master Ledger
-
-The most counterintuitive element of the continental architecture is the role of Oceania. In conventional geopolitical frameworks, leverage derives from strength. The framework inverts this.
-
-Oceania — Australia and the Pacific — holds the master ledger for the entire continental system. Not because Oceania is the most powerful bloc. Because Oceania is the most vulnerable.
-
-The logic is as follows: any bloc that moves to overthrow or take control of Oceania loses access to the master ledger, because other blocks will consider it a threat to their own sovereignty (losing the ability to validate any provenance record, any agent session stamp, or any cross-bloc transaction in the system). The cost of aggression is total systemic blindness. That is a stronger deterrent than a military alliance, or nuclear trad, because it is not contingent on political will — it is structural.
-
-This is the same logic that makes Switzerland the host of international institutions: not Swiss strength, but Swiss absence of territorial capability. Oceania has no expansionary options. Their interests are purely defensive. They are the credible neutral custodian precisely because no one fears what they would do with the leverage.
-
-This design pattern has already been proven at civilizational scale — not for AI, but for money. The Bank for International Settlements (BIS), headquartered in Basel, Switzerland, is the bank for central banks. It holds the settlement infrastructure for the global financial system. It was not chosen because Switzerland is powerful. It was chosen because Switzerland has no territorial ambitions, no imperial history, and no plausible motive to weaponize its custodial position. Its neutrality is structural, not merely declared. Since 1930, the BIS has operated through wars, depressions, and geopolitical upheavals as the one institution that every central bank trusted precisely because it had nothing to gain by betraying that trust.
-
-The Oceania master ledger follows the same logic, applied to AI provenance rather than financial settlement. It is worth acknowledging honestly: the BIS model is not without its failures. Over time, the institutions built around financial settlement infrastructure accumulated power that now extends well beyond neutral custody — banks, through machinery the BIS coordinates, now exercise leverage over entire economies in ways that were not intended at the founding and that have produced real and serious harms. This framework takes that problem into account. The AEGIS design does not concentrate executive power in the ledger holder. Oceania holds the validation function — the cryptographic root that confirms provenance records are authentic. It does not hold the content of those records, the authority to interpret them, or the power to act on them. The deterrent value is structural: losing ledger access means losing the ability to validate any cross-bloc transaction. But the ledger holder cannot unilaterally weaponize the records themselves. The distinction between custodian and authority is deliberate, and it is the lesson the BIS history teaches.
-
-The master ledger is to the continental system what the nuclear codes are to a deterrence architecture: the cost of forcing a hand is unacceptable to everyone.
-
-### 3.4 The Ground Station Problem, Resolved
+### 3.3 The Ground Station Problem, Resolved
 
 The orbital layer's vulnerability is the ground station control plane. Satellites are programmed via ground stations. Ground stations are in jurisdictions. Jurisdictions have governments.
 
@@ -196,7 +180,7 @@ Each bloc operates a segment of the satellite constellation under its own govern
 
 This is the connection between the technology layer and the geopolitical layer. The satellite ASIC stamp is the physical implementation of the continental accountability architecture.
 
-### 3.5 The Orbital Lattice and Bloc Formation
+### 3.4 The Orbital Lattice and Bloc Formation
 
 The orbital lattice — the global network of satellite constellations layered on top of a distributed ground mesh of data centers — is the enabling infrastructure for the continental model. It is also the mechanism by which the blocs remain distinct rather than collapsing into a single global system.
 
